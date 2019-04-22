@@ -198,6 +198,7 @@ class JsonDataset(object):
             (num_valid_objs, self.num_classes),
             dtype=entry['gt_overlaps'].dtype
         )
+        print('gt overlaps', gt_overlaps)
         seg_areas = np.zeros((num_valid_objs), dtype=entry['seg_areas'].dtype)
         is_crowd = np.zeros((num_valid_objs), dtype=entry['is_crowd'].dtype)
         box_to_gt_ind_map = np.zeros(
