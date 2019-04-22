@@ -104,6 +104,7 @@ class JsonDataset(object):
             self._prep_roidb_entry(entry)
         if gt:
             # Include ground-truth object annotations
+            print('yes gt')
             self.debug_timer.tic()
             for entry in roidb:
                 self._add_gt_annotations(entry)
