@@ -165,6 +165,7 @@ class JsonDataset(object):
         print(entry['id'])
         ann_ids = self.COCO.getAnnIds(imgIds=entry['id'], iscrowd=None)
         objs = self.COCO.loadAnns(ann_ids)
+        print(len(objs))
         # Sanitize bboxes -- some are invalid
         valid_objs = []
         valid_segms = []
