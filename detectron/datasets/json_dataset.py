@@ -162,6 +162,7 @@ class JsonDataset(object):
 
     def _add_gt_annotations(self, entry):
         """Add ground truth annotation metadata to an roidb entry."""
+        print(entry['id'])
         ann_ids = self.COCO.getAnnIds(imgIds=entry['id'], iscrowd=None)
         objs = self.COCO.loadAnns(ann_ids)
         # Sanitize bboxes -- some are invalid
@@ -198,7 +199,6 @@ class JsonDataset(object):
             (num_valid_objs, self.num_classes),
             dtype=entry['gt_overlaps'].dtype
         )
-        print('gt overlaps', gt_overlaps)
         seg_areas = np.zeros((num_valid_objs), dtype=entry['seg_areas'].dtype)
         is_crowd = np.zeros((num_valid_objs), dtype=entry['is_crowd'].dtype)
         box_to_gt_ind_map = np.zeros(
