@@ -37,6 +37,18 @@ _RAW_DIR = 'raw_dir'
 
 # Available datasets
 _DATASETS = {
+    'football_cv_train': {
+        _IM_DIR:
+            _DATA_DIR + '/football/train',
+        _ANN_FN:
+            _DATA_DIR + '/football/annotations/football_train.json'
+    },
+    'football_cv_val': {
+        _IM_DIR:
+            _DATA_DIR + '/football/val',
+        _ANN_FN:
+            _DATA_DIR + '/football/annotations/football_val.json'
+    },
     'cityscapes_fine_instanceonly_seg_train': {
         _IM_DIR:
             _DATA_DIR + '/cityscapes/images',
