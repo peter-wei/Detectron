@@ -42,7 +42,7 @@ TRAIN:
   DATASETS: ('football_cv_train',)
   SCALES: (500,)
   MAX_SIZE: 833
-  BATCH_SIZE_PER_IM: 256
+  BATCH_SIZE_PER_IM: 128
   RPN_PRE_NMS_TOP_N: 2000  # Per FPN level
 TEST:
   DATASETS: ('football_cv_val',)
