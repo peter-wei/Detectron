@@ -115,6 +115,8 @@ def filter_for_training(roidb):
         # Valid images have:
         #   (1) At least one foreground RoI OR
         #   (2) At least one background RoI
+        print('Start Check Valid')
+
         overlaps = entry['max_overlaps']
         # find boxes with sufficient overlap
         fg_inds = np.where(overlaps >= cfg.TRAIN.FG_THRESH)[0]
@@ -122,6 +124,8 @@ def filter_for_training(roidb):
         bg_inds = np.where((overlaps < cfg.TRAIN.BG_THRESH_HI) &
                            (overlaps >= cfg.TRAIN.BG_THRESH_LO))[0]
         # image is only valid if such boxes exist
+        print(len(fg_inds))
+        print(len(bg_inds))
         valid = len(fg_inds) > 0 or len(bg_inds) > 0
         if cfg.MODEL.KEYPOINTS_ON:
             # If we're training for keypoints, exclude images with no keypoints
