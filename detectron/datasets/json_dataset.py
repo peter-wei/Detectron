@@ -146,7 +146,6 @@ class JsonDataset(object):
         entry['gt_overlaps'] = scipy.sparse.csr_matrix(
             np.empty((0, self.num_classes), dtype=np.float32)
         )
-        print(entry['gt_overlaps'])
         entry['is_crowd'] = np.empty((0), dtype=np.bool)
         # 'box_to_gt_ind_map': Shape is (#rois). Maps from each roi to the index
         # in the list of rois that satisfy np.where(entry['gt_classes'] > 0)
