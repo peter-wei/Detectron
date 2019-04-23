@@ -302,7 +302,7 @@ def vis_one_image(
             plt.Rectangle((bbox[0], bbox[1]),
                           bbox[2] - bbox[0],
                           bbox[3] - bbox[1],
-                          fill=False, edgecolor='g',
+                          fill=False, edgecolor='r',
                           linewidth=0.5, alpha=box_alpha))
 
         if show_class:
@@ -312,7 +312,7 @@ def vis_one_image(
                 fontsize=3,
                 family='serif',
                 bbox=dict(
-                    facecolor='g', alpha=0.4, pad=0, edgecolor='none'),
+                    facecolor='r', alpha=0.4, pad=0, edgecolor='none'),
                 color='white')
 
         # show mask
