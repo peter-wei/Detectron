@@ -301,8 +301,8 @@ def vis_one_image(
         if score < thresh:
             continue
 
-        print(im_name, 'point')
-        print(bbox[0], bbox[1], bbox[2], bbox[3])
+        #append to player_loc
+        player_loc.append([bbox[2], (bbox[3] + bbox[1])/2])
 
         # show box (off by default)
         ax.add_patch(
@@ -400,4 +400,12 @@ def vis_one_image(
 
     output_name = os.path.basename(im_name) + '.' + ext
     fig.savefig(os.path.join(output_dir, '{}'.format(output_name)), dpi=dpi)
+
+
+    txt_name = output_name + '.txt'
+    filetxt = open(os.path.join(output_dir, '{}'.format(txt_name)), 'a')
+
+    for point in player_loc:
+        filetxt.write(point[0], ' ', point[1], '\n')
+
     plt.close('all')
