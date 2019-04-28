@@ -302,7 +302,7 @@ def vis_one_image(
             continue
 
         #append to player_loc
-        player_loc.append([bbox[2], (bbox[3] + bbox[1])/2])
+        player_loc.append([bbox[3], (bbox[0] + bbox[2])/2])
 
         # show box (off by default)
         ax.add_patch(
