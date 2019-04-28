@@ -406,7 +406,7 @@ def vis_one_image(
     filetxt = open(os.path.join(output_dir, '{}'.format(txt_name)), 'a')
 
     for point in player_loc:
-        newstring = str(point[0]) + ' ' + strin(point[1]) + '\n'
+        newstring = str(point[0]) + ' ' + str(point[1]) + '\n'
         filetxt.write(newstring)
 
     plt.close('all')
