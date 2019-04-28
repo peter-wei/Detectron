@@ -301,7 +301,7 @@ def vis_one_image(
         if score < thresh:
             continue
 
-        print(output_name, 'point')
+        print(im_name, 'point')
         print(bbox[0], bbox[1], bbox[2], bbox[3])
 
         # show box (off by default)
