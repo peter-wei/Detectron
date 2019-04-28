@@ -291,11 +291,18 @@ def vis_one_image(
         sorted_inds = np.argsort(-areas)
 
     mask_color_id = 0
+
+    # list of player locations
+    player_loc = []
+
     for i in sorted_inds:
         bbox = boxes[i, :4]
         score = boxes[i, -1]
         if score < thresh:
             continue
+
+        print(output_name, 'point')
+        print(bbox[0], bbox[1], bbox[2], bbox[3])
 
         # show box (off by default)
         ax.add_patch(
@@ -304,6 +311,8 @@ def vis_one_image(
                           bbox[3] - bbox[1],
                           fill=False, edgecolor='r',
                           linewidth=1.2, alpha=box_alpha))
+
+
 
         if show_class:
             ax.text(
